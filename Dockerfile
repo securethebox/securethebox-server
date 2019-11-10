@@ -7,8 +7,9 @@ WORKDIR /home/securethebox-server
 RUN pip3 install virtualenv
 RUN python3.7 -m virtualenv venv
 ENV PATH="/home/securethebox-server/venv/bin:$PATH"
+ENV APPENV="PROD"
 RUN . venv/bin/activate
 RUN pip3 install -r requirements.txt
 
 # Start securethebox-server service
-RUN ./venv/bin/python3.7 app.py
+CMD ./venv/bin/python3.7 app.py
