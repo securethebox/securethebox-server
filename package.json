@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "python git_scripts.py dev",
+    "prod": "python git_scripts.py prod",
+    "pip-s": "python git_scripts.py pip-save",
+    "push-m": "python git_scripts.py git-push-master",
+    "push-b": "python git_scripts.py git-push-branch",
+    "sync-l": "python git_scripts.py git-sync-local",
+    "sync-m": "python git_scripts.py git-merge-upstream"
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/ncmd/securethebox-server/issues"
   },
-  "homepage": "https://github.com/ncmd/securethebox-server#readme"
+  "homepage": "https://github.com/ncmd/securethebox-server#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "b": "$CURRENTBRANCH"
+  }
 }
