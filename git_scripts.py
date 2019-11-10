@@ -5,6 +5,7 @@ import json
 import subprocess
 import sys
 import os
+import docker
 
 class GitControl():
     def __init__(self):
@@ -70,6 +71,30 @@ class GitControl():
         elif self.arguments[0] == "git-merge-upstream":
             subprocess.Popen([f"git remote add upstream https://github.com/"+self.git_prod_name+"/"+self.git_fork_name+".git ; git fetch upstream ; git checkout master ; git merge upstream/master"],shell=True).wait()
 
+        # Docker build
+        elif self.arguments[0] == "docker-build":
+            subprocess.Popen([f"docker build . -t "+self.git_fork_name],shell=True).wait()
+
+        # Docker run
+        elif self.arguments[0] == "docker-run":
+            client = docker.from_env()
+            client.containers.run(self.git_fork_name+":latest", ports={'5000/tcp': ('0.0.0.0', 5000)}, detach=True)
+
+        # Docker stop kill all images
+        elif self.arguments[0] == "docker-kill-all":
+            client = docker.from_env()
+            for container in client.containers.list():
+                container.kill()
+
+        # Docker delete all images
+        elif self.arguments[0] == "docker-images-delete-all":
+            client = docker.from_env()
+            for image in client.images.list():
+                try:
+                    client.images.remove(image.id,force=True)
+                except:
+                    print("Could not delete", image)
+            
 if __name__ == "__main__":
     gc = GitControl()
     gc.setArguments(sys.argv[1:])

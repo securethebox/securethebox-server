@@ -10,7 +10,11 @@
     "push-m": "python git_scripts.py git-push-master",
     "push-b": "python git_scripts.py git-push-branch",
     "sync-l": "python git_scripts.py git-sync-local",
-    "sync-m": "python git_scripts.py git-merge-upstream"
+    "sync-m": "python git_scripts.py git-merge-upstream",
+    "docker-b": "python git_scripts.py docker-build",
+    "docker-r": "python git_scripts.py docker-run",
+    "docker-k": "python git_scripts.py docker-kill-all",
+    "images-a": "python git_scripts.py docker-images-delete-all"
   },
   "repository": {
     "type": "git",
