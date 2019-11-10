@@ -1,19 +1,36 @@
 # securethebox-server
 - Backend for securethebox app
 
-## Developer Requirements
+## Mac Developer Requirements
+- git (Recommended to just install Github Desktop)
+ - https://desktop.github.com/
+- Docker for Desktop
+  - https://www.docker.com/products/docker-desktop
+- Kubernetes helm
+  - https://github.com/helm/helm
+- nodejs 12.x & npm 6.x
+  - https://nodejs.org/en/
+
+## Windows Developer Requirements
+Note: Use Chocolatly Package Manager https://chocolatey.org/
 - git (Recommended to just install Github Desktop)
 - Docker for Desktop
 - Kubernetes helm - https://github.com/helm/helm
 - nodejs 12.x & npm 6.x
-- After you installed npm and nodejs, install these libraries globally
+- python3
+```
+choco install github-desktop docker-desktop kubernetes-helm nodejs-lts python3
+```
+
+## After you installed npm and nodejs, install these libraries globally
+
 ```
 npm install -g npm-run-all
 npm install -g cross-var
 npm install -g commitizen
 ```
 
-## Starting Service Locally
+## Starting Service Locally with Docker
 - Build docker image
 ```
 npm run docker-b
@@ -21,6 +38,33 @@ npm run docker-b
 - Run docker image and shell into it
 ```
 npm run docker-r
+```
+
+## Starting Service Locally without Docker
+- Run app in Dev Mode
+```
+npm run dev
+```
+- Run app in Prod Mode
+```
+npm run prod
+```
+
+# Other NPM Scripts
+- DO NOT INCLUDE CONTENT AFTER '-'(hyphen), it's just the description of what the command does.
+- ie. use 'npm run dev' NOT 'npm run dev - run app as DEV environment'
+```
+npm run dev - run app as DEV environment
+npm run prod - run app as PROD environment
+npm run pip-s - save current pip libraries to requirements.txt
+npm run push-m - push to fork master branch
+npm run push-b - push current branch to fork
+npm run sync-l - sync fork master with local master
+npm run sync-m - sync fork master with prod master
+npm run docker-b - build docker image
+npm run docker-r - run docker image and get shell
+npm run docker-k - kill all running docker containers
+npm run images-a - delete all docker images
 ```
 
 ## Learning about this project
@@ -41,18 +85,6 @@ Node/npm
 - npm/nodejs is used for development to automate common command line tasks
 - Docker should not need to utilize nodejs (at least for now)
 - Read package.json script section to see all command line arguments
-- Example npm commands:
-```
-npm run dev - run app as DEV environment
-npm run prod - run app as PROD environment
-npm run pip-s - save current pip libraries to requirements.txt
-npm run push-m - push to fork master branch
-npm run push-b - push current branch to fork
-npm run sync-l - sync fork master with local master
-npm run sync-m - sync fork master with prod master
-npm run docker-b - build docker image
-npm run docker-r - run docker image and get shell
-```
 
 Spinnaker
 - Service that will deploy helm charts
@@ -120,6 +152,8 @@ securethebox_server
 ├── app.py (securethebox's main python script to start app)
 │
 ├── Dockerfile (docker file to build docker image)
+│
+├── git_scripts.py (all git scripts to make dev with git easier)
 │
 ├── package.lock.json (node/npm compiled file)
 ├── package.json (node/npm scripts)
