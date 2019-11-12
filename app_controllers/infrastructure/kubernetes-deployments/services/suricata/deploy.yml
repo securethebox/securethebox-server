@@ -1,0 +1,36 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: suricata-charles
+  labels:
+    app: suricata-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suricata-charles
+  template:
+    metadata:
+      labels:
+        app: suricata-charles
+    spec:
+      containers:
+      - name: suricata-charles
+        image: dtagdevsec/suricata
+        env:
+          - name: OINKCODE
+            value: 319812317ca9435020b7eb6a0211f8ac6fe7f35a
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+              - SYS_NICE
+              - NET_RAW
+        ports:
+          - containerPort: 5300
+        volumeMounts:
+          - name: suricata-home
+            mountPath: /var/log/suricata
+      volumes:
+      - name: suricata-home
+        emptyDir: {}

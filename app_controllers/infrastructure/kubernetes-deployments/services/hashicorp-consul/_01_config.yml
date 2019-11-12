@@ -1,0 +1,18 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: consul-config
+  namespace: default
+data:
+  server.json: |
+    {
+    "ca_file": "/etc/tls/ca.pem",
+    "cert_file": "/etc/tls/consul.pem",
+    "key_file": "/etc/tls/consul-key.pem",
+    "verify_incoming": false,
+    "verify_outgoing": false,
+    "verify_server_hostname": false,
+    "ports": {
+        "https": 8443
+      }
+    }

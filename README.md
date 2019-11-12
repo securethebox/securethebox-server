@@ -102,9 +102,6 @@ Google Kubernetes Engine
 ## Project File Structure
 ```
 securethebox_server
-├── app_routes/ (contain all api path routes)
-│   ├── applications.py
-│   └── challenges.py
 │
 ├── app_controllers/ (contain all business logic for main app)
 │   ├── accounts/
@@ -113,6 +110,13 @@ securethebox_server
 │   ├── organizations/
 │   ├── subscriptions/
 │   └── submissions/
+│
+├── app_routes/ (contain all api path routes)
+│   ├── initialize
+│   │   ├── applications.py (Injected Fake Data)
+│   │   └── challenges.py (Injected Fake Data)
+│   ├── applications.py
+│   └── challenges.py
 │
 ├── app_services/ (contain all functions and scripts that interact with external services)
 │   ├── firebase/
@@ -148,6 +152,9 @@ securethebox_server
 │
 ├── .dockerignore (ignore files when doing `docker build` command)
 ├── .gitignore (ignore certain files specifically secrets and locally downloaded libraries)
+│
+├── apiv1.py (API v1 - REST)
+├── apiv2.py (API v2 - GRAPHQL)
 │
 ├── app.py (securethebox's main python script to start app)
 │

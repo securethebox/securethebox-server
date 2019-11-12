@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+      name: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: 'wazuh/wazuh-nginx:latest'
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          env:
+            - name: NGINX_PORT
+              value: '443'
+            - name: NGINX_NAME
+              value: 'user_changeMe'
+            - name: NGINX_PWD
+              value: 'password_changeMe'
+          ports:
+            - containerPort: 80
+            - containerPort: 443

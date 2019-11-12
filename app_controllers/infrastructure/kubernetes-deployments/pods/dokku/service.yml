@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dokku-charles
+spec:
+  selector:
+    app: dokku-charles
+  ports:
+  - name: http
+    targetPort: 80
+    port: 80
+  - name: ssh
+    targetPort: 2222
+    port: 22

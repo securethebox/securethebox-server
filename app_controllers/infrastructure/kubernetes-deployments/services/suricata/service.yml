@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: suricata-charles
+spec:
+  selector:
+    app: suricata-charles
+  ports:
+  - name: http
+    targetPort: 5300
+    port: 80
