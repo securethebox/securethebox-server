@@ -1,0 +1,75 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: vault
+  labels:
+    app: vault
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vault
+    spec:
+      containers:
+      - name: vault
+        command: ["vault", "server", "-config", "/vault/config/vault.hcl"]
+        image: "vault:0.11.5"
+        ports:
+        - containerPort: 8200
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        volumeMounts:
+          - name: configurations
+            mountPath: /vault/config/vault.hcl
+            subPath: vault.hcl
+      - name: consul-vault-agent
+        image: "consul:1.4.0"
+        env:
+          - name: GOSSIP_ENCRYPTION_KEY
+            valueFrom:
+              secretKeyRef:
+                name: consul
+                key: gossip-encryption-key
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+        args:
+          - "agent"
+          - "-retry-join=hashicorp-consul-charles-0.consul.$(NAMESPACE).svc.cluster.local"
+          - "-retry-join=hashicorp-consul-charles-1.consul.$(NAMESPACE).svc.cluster.local"
+          - "-encrypt=$(GOSSIP_ENCRYPTION_KEY)"
+          - "-domain=cluster.local"
+          - "-datacenter=dc1"
+          - "-disable-host-node-id"
+          - "-node=vault-1"
+        volumeMounts:
+            - name: config
+              mountPath: /consul/myconfig
+            - name: tls
+              mountPath: /etc/tls  
+            - name: vault-config
+              mountPath: "/vault/config"
+            - name: vault-logs
+              mountPath: "/vault/logs"
+            - name: vault-file
+              mountPath: "/vault/file"
+      volumes:
+        - name: configurations
+          configMap:
+            name: vault-config
+        - name: config
+          configMap:
+            name: consul-config
+        - name: tls
+          secret:
+            secretName: consul
+        - name: vault-config
+          emptyDir: {}
+        - name: vault-logs
+          emptyDir: {}
+        - name: vault-file
+          emptyDir: {}

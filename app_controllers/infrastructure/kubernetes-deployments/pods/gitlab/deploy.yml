@@ -1,0 +1,46 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: gitlab-charles
+  labels:
+    app: gitlab-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitlab-charles
+  template:
+    metadata:
+      labels:
+        app: gitlab-charles
+    spec:
+      containers:
+      - name: gitlab-charles
+        image: gitlab/gitlab-ce:latest
+        ports:
+          - containerPort: 80
+          - containerPort: 443
+          - containerPort: 8080
+          - containerPort: 22
+        volumeMounts:
+          - name: dockersock
+            mountPath: "/var/run/docker.sock"
+          - name: gitlab-config
+            mountPath: "/srv/gitlab/config"
+          - name: gitlab-logs
+            mountPath: "/srv/gitlab/logs"
+          - name: gitlab-data
+            mountPath: "/srv/gitlab/data"
+      volumes:
+      - name: gitlab-config
+        hostPath:
+          path: /etc/gitlab
+      - name: gitlab-logs
+        hostPath:
+          path: /var/log/gitlab
+      - name: gitlab-data
+        hostPath:
+          path: /var/opt/gitlab
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock

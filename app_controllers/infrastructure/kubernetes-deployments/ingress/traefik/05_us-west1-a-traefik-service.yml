@@ -1,0 +1,22 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: traefik-us-west1-a-ingress-controller
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: traefik.us-west1-a.securethebox.us
+spec:
+  selector:
+    app: traefik-us-west1-a-ingress-controller
+  ports:
+    - protocol: TCP
+      port: 443
+      name: https
+    - protocol: TCP
+      port: 80
+      name: http
+    - protocol: TCP
+      port: 8080
+      name: admin
+  type: LoadBalancer
+              

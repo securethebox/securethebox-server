@@ -1,0 +1,24 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: vault-config
+  namespace: default
+data:
+  vault.hcl: |
+    disable_cache = true
+    disable_mlock = true
+    default_lease_ttl = 168h
+    max_lease_ttl = 720h
+    
+    ui = true
+    api_addr = "http://0.0.0.0"
+    
+    listener "tcp" {
+      address 	= "0.0.0.0:8200"
+      tls_disable = 1
+    }
+
+    storage "consul" {
+      address = "consul:8500"
+      path    = "vault/"
+    }

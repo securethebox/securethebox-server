@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitlab-charles
+spec:
+  selector:
+    app: gitlab-charles
+  ports:
+  - name: http
+    targetPort: 80
+    port: 80
+  - name: https
+    targetPort: 443
+    port: 443
+  - name: ssh
+    targetPort: 22
+    port: 2222

@@ -1,0 +1,7 @@
+juice-shop/encryptionkeys/jwt.pub
+juice-shop/encryptionkeys/premium.key
+
+juice-shop/data/static/challenges.yml
+juice-shop/data/static/users.yml
+
+juice-shop/ctf.key

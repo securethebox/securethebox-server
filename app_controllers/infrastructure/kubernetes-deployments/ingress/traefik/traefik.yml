@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik
+spec:
+  rules:
+  - host: traefik-ingress.us-west1-a.securethebox.us
+    http:
+      paths:
+      - backend:
+          serviceName: traefik
+          servicePort: 80
+data:
+  traefik.toml: |
+    # traefik.toml
+    defaultEntryPoints = ["http", "https"]
+    [entryPoints]
+      [entryPoints.dashboard]
+        address = ":8080"
+      [entryPoints.http]
+        address = ":80"
+          [entryPoints.http.redirect]
+            entryPoint = "https"
+      [entryPoints.https]
+        address = ":443"
+          [entryPoints.https.tls]
+
+    [api]
+    entrypoint="dashboard"
+    
+    [kubernetes]

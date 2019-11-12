@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-charles
+spec:
+  selector:
+    app: jenkins-charles
+  ports:
+  - name: http
+    targetPort: 8080
+    port: 8080
+  - name: https
+    targetPort: 8443
+    port: 8443
+  - name: api
+    targetPort: 50000
+    port: 50000
