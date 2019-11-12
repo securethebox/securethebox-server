@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: app-charles
+  labels:
+    app: app-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-charles
+  template:
+    metadata:
+      labels:
+        app: app-charles
+    spec:
+      containers:
+        - name: app-charles
+          image: node:8-jessie
+          ports:
+            - containerPort: 3000
+            - containerPort: 9000
+          command: ["/bin/sh", "-c"]
+          args:
+          - git clone http://gitlab-charles/root/juice-shop-charles.git &&
+            cd juice-shop-charles &&
+            npm install &&
+            npm run postinstall &&
+            npm run start & 
+            echo done ;
+            while true ; do continue ; done ;

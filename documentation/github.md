@@ -6,3 +6,7 @@ git checkout master
 git merge upstream/master
 git push
 ```
+
+# Additional help
+- Refer to git-scripted repository
+https://github.com/ncmd/git-scripted

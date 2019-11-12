@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: wazuh
+  labels:
+    app: wazuh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wazuh
+  template:
+    metadata:
+      labels:
+        app: wazuh
+    spec:
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
+      containers:
+      - name: wazuh
+        image: 'wazuh/wazuh:latest'
+        ports:
+        - containerPort: 1514
+        - containerPort: 1515
+          name: registration
+        - containerPort: 514
+        - containerPort: 55000
+          name: api
+        volumeMounts:
+        - mountPath: "/var/log/challenge1"
+          name: task-pv-storage

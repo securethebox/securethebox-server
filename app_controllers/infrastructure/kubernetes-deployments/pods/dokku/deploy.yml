@@ -1,0 +1,39 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: dokku-charles
+  labels:
+    app: dokku-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dokku-charles
+  template:
+    metadata:
+      labels:
+        app: dokku-charles
+    spec:
+      containers:
+      - name: dokku-charles
+        image: ubuntu:latest
+        command: ["/bin/sh", "-c"]
+        ports:
+          - containerPort: 80
+          - containerPort: 22
+          - containerPort: 443
+        args:
+        - echo starting;
+          apt-get update -y;
+          apt-get install wget -y;
+          wget https://raw.githubusercontent.com/dokku/dokku/master/bootstrap.sh;
+          DOKKU_NO_INSTALL_RECOMMENDS=true bash bootstrap.sh
+          echo done;
+          while true ; do continue ; done ;
+        volumeMounts:
+          - name: dockersock
+            mountPath: "/var/run/docker.sock"
+      volumes:
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock

@@ -1,0 +1,21 @@
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: kali-linux-charles
+spec:
+  containers:
+    - name: kali-linux-charles
+      image: kalilinux/kali-linux-docker
+      command: ["/bin/sh", "-c"]
+      args:
+      - echo starting;
+        apt-get update && apt-get install metasploit-framework python3-pip -y;
+        pip3 install --user pymetasploit3;
+        msfrpcd -P securethebox -S;
+        service postgresql start;
+        msfdb init;
+        echo done;
+        while true ; do continue ; done ;
+  restartPolicy: Never
+              

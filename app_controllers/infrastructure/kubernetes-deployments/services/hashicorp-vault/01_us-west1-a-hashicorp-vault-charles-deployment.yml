@@ -1,0 +1,76 @@
+
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: hashicorp-vault-charles
+  labels:
+    app: hashicorp-vault-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hashicorp-vault-charles
+  template:
+    metadata:
+      labels:
+        app: hashicorp-vault-charles
+    spec:
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
+        - name: vault-config
+          emptyDir: {}
+        - name: vault-logs
+          emptyDir: {}
+        - name: vault-file
+          emptyDir: {}
+      containers:
+      - name: hashicorp-vault-charles
+        image: vault:latest
+        ports:
+        - containerPort: 8200
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        env:
+          - name: VAULT_DEV_ROOT_TOKEN_ID
+            value: "root"
+        volumeMounts:
+          - name: task-pv-storage
+            mountPath: "/var/log/challenge1"
+          - name: vault-config
+            mountPath: "/vault/config"
+          - name: vault-logs
+            mountPath: "/vault/logs"
+          - name: vault-file
+            mountPath: "/vault/file"
+        # command: ["/bin/sh", "-c"]
+        # args:
+        #   - echo "hello" &
+        #     export VAULT_ADDR=http://127.0.0.1:8200 &&
+        #     echo $VAULT_ADDR &
+        #     export VAULT_SKIP_VERIFY=true &&
+        #     echo $VAULT_SKIP_VERIFY &
+        #     while true ; do continue ; done ;
+        # - export VAULT_ADDR=http://127.0.0.1:8200 & export VAULT_SKIP_VERIFY=true & vault login root &
+        #   export VAULT_SKIP_VERIFY=true &&
+        #   vault login root &
+        #   while true ; do continue ; done ;
+          # vault auth enable userpass &&
+          # for u in sally bobby chris devin; do vault write auth/userpass/users/$u password=password ; done &&
+          # vault kv put secret/foo a=b &&
+          # vault kv get secret/foo &&
+          # while true ; do continue ; done ;
+              
+
+
+# export VAULT_ADDR=http://127.0.0.1:8200
+# export VAULT_SKIP_VERIFY=true
+# vault login root
+# vault auth enable userpass
+# for u in sally bobby chris devin; do vault write auth/userpass/users/$u password=password ; done
+# vault kv put secret/foo a=b
+# vault kv get secret/foo
+# while true ; do continue ; done ;

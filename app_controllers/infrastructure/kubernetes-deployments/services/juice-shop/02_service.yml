@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: juice-shop-charles
+spec:
+  selector:
+    app: juice-shop-charles
+  ports:
+  - name: http
+    targetPort: 3000
+    port: 80
+  - name: cloudcmd
+    targetPort: 9000
+    port: 9000

@@ -1,0 +1,1605 @@
+[
+    {
+       "label":"Blue Team",
+       "children":[
+          {
+             "label":"Detection",
+             "children":[
+                {
+                   "label":"Automation",
+                   "children":[
+                      {
+                         "label":"APIs"
+                      },
+                      {
+                         "label":"Scripting"
+                      }
+                   ]
+                },
+                {
+                   "label":"Scalability"
+                },
+                {
+                   "label":"Techniques",
+                   "children":[
+                      {
+                         "label":"Anomaly based"
+                      },
+                      {
+                         "label":"Behavioral"
+                      },
+                      {
+                         "label":"Machine Learning"
+                      },
+                      {
+                         "label":"Static Signature"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Forensics",
+             "children":[
+                {
+                   "label":"Analysis",
+                   "children":[
+                      {
+                         "label":"Data Carving"
+                      },
+                      {
+                         "label":"Deobfuscation"
+                      },
+                      {
+                         "label":"File Systems",
+                         "children":[
+                            {
+                               "label":"Boot Records"
+                            },
+                            {
+                               "label":"Encrypted Volumes"
+                            },
+                            {
+                               "label":"File Tables"
+                            },
+                            {
+                               "label":"Inodes"
+                            },
+                            {
+                               "label":"Slack Space"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Memory"
+                      },
+                      {
+                         "label":"Steganography"
+                      },
+                      {
+                         "label":"Temporal Analysis"
+                      }
+                   ]
+                },
+                {
+                   "label":"Collection",
+                   "children":[
+                      {
+                         "label":"Desktop OSes"
+                      },
+                      {
+                         "label":"Encryption"
+                      },
+                      {
+                         "label":"Memory"
+                      },
+                      {
+                         "label":"Mobile OSes"
+                      },
+                      {
+                         "label":"Network"
+                      }
+                   ]
+                },
+                {
+                   "label":"Legal",
+                   "children":[
+                      {
+                         "label":"Chain of Custody"
+                      },
+                      {
+                         "label":"Diligence And Documentation"
+                      },
+                      {
+                         "label":"Privilege"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Monitoring",
+             "children":[
+                {
+                   "label":"Application",
+                   "children":[
+                      {
+                         "label":"Enterprise"
+                      },
+                      {
+                         "label":"Remote Access"
+                      },
+                      {
+                         "label":"Web"
+                      }
+                   ]
+                },
+                {
+                   "label":"Host",
+                   "children":[
+                      {
+                         "label":"Linux"
+                      },
+                      {
+                         "label":"Windows"
+                      },
+                      {
+                         "label":"macOS"
+                      }
+                   ]
+                },
+                {
+                   "label":"Logging",
+                   "children":[
+                      {
+                         "label":"Architecture"
+                      },
+                      {
+                         "label":"Formatting"
+                      },
+                      {
+                         "label":"Processing"
+                      },
+                      {
+                         "label":"Searching"
+                      },
+                      {
+                         "label":"Storage"
+                      }
+                   ]
+                },
+                {
+                   "label":"Network",
+                   "children":[
+                      {
+                         "label":"Packet Capture",
+                         "children":[
+                            {
+                               "label":"Common Tools"
+                            },
+                            {
+                               "label":"HA And Scalability"
+                            },
+                            {
+                               "label":"Source Spoofing Considerations"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Valuable Protocols"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Response",
+             "children":[
+                {
+                   "label":"Crisis",
+                   "children":[
+                      {
+                         "label":"Communication"
+                      },
+                      {
+                         "label":"Documentation"
+                      },
+                      {
+                         "label":"Priority"
+                      }
+                   ]
+                },
+                {
+                   "label":"Remediation",
+                   "children":[
+                      {
+                         "label":"Containment Techniques"
+                      },
+                      {
+                         "label":"Eradication Principles"
+                      },
+                      {
+                         "label":"IR Life-cycle"
+                      },
+                      {
+                         "label":"Pyramid of Pain"
+                      }
+                   ]
+                },
+                {
+                   "label":"Reverse Engineering",
+                   "children":[
+                      {
+                         "label":"Dynamic Analysis"
+                      },
+                      {
+                         "label":"Evasion"
+                      },
+                      {
+                         "label":"Protocol Analysis"
+                      },
+                      {
+                         "label":"Static Analysis"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Threat Intel",
+             "children":[
+                {
+                   "label":"IOC Sharing"
+                },
+                {
+                   "label":"OPSEC",
+                   "children":[
+                      {
+                         "label":"Fingerprinting"
+                      },
+                      {
+                         "label":"Geographic Considerations"
+                      },
+                      {
+                         "label":"Host"
+                      },
+                      {
+                         "label":"Network"
+                      },
+                      {
+                         "label":"Persona Management"
+                      }
+                   ]
+                },
+                {
+                   "label":"Severities vs Impact"
+                },
+                {
+                   "label":"Traffic Light Protocol"
+                }
+             ]
+          }
+       ]
+    },
+    {
+       "label":"Red Team",
+       "children":[
+          {
+             "label":"Attack",
+             "children":[
+                {
+                   "label":"Avoiding Detection"
+                },
+                {
+                   "label":"Client Considerations"
+                },
+                {
+                   "label":"Covering Tracks"
+                },
+                {
+                   "label":"Lateral Movement"
+                },
+                {
+                   "label":"Tunneling"
+                }
+             ]
+          },
+          {
+             "label":"Exploitation",
+             "children":[
+                {
+                   "label":"Local Privilege Escalation"
+                },
+                {
+                   "label":"Phishing"
+                },
+                {
+                   "label":"Remote"
+                },
+                {
+                   "label":"Web"
+                }
+             ]
+          },
+          {
+             "label":"Implants",
+             "children":[
+                {
+                   "label":"Anti-RE Techniques",
+                   "children":[
+                      {
+                         "label":"Packing And Encrypting"
+                      },
+                      {
+                         "label":"Process Injection",
+                         "children":[
+                            {
+                               "label":"Linux"
+                            },
+                            {
+                               "label":"Windows"
+                            },
+                            {
+                               "label":"macOS"
+                            }
+                         ]
+                      }
+                   ]
+                },
+                {
+                   "label":"Command And Control",
+                   "children":[
+                      {
+                         "label":"Anti-tampering"
+                      },
+                      {
+                         "label":"Avoiding Detection"
+                      },
+                      {
+                         "label":"Covert Channels"
+                      }
+                   ]
+                },
+                {
+                   "label":"Local vs Remote"
+                },
+                {
+                   "label":"Reverse vs Bind"
+                },
+                {
+                   "label":"Stagers And Droppers"
+                },
+                {
+                   "label":"User-space vs Kernel-space"
+                }
+             ]
+          },
+          {
+             "label":"OSINT"
+          },
+          {
+             "label":"Objectives",
+             "children":[
+                {
+                   "label":"Rules of Engagement"
+                },
+                {
+                   "label":"Scope"
+                },
+                {
+                   "label":"Statement of Work"
+                }
+             ]
+          },
+          {
+             "label":"Persist",
+             "children":[
+                {
+                   "label":"Code"
+                },
+                {
+                   "label":"Configs"
+                },
+                {
+                   "label":"Linux"
+                },
+                {
+                   "label":"Web"
+                },
+                {
+                   "label":"Windows"
+                },
+                {
+                   "label":"macOS"
+                }
+             ]
+          },
+          {
+             "label":"Post Exploitation",
+             "children":[
+                {
+                   "label":"Application Creds"
+                },
+                {
+                   "label":"Enterprise Creds"
+                },
+                {
+                   "label":"Files"
+                },
+                {
+                   "label":"OS Creds"
+                }
+             ]
+          },
+          {
+             "label":"Vulnerability Analysis"
+          }
+       ]
+    },
+    {
+       "label":"Security Engineering",
+       "children":[
+          {
+             "label":"Application Security",
+             "children":[
+                {
+                   "label":"Application DoS"
+                },
+                {
+                   "label":"Automation",
+                   "children":[
+                      {
+                         "label":"Revision Control Techniques"
+                      },
+                      {
+                         "label":"Static Analysis"
+                      },
+                      {
+                         "label":"Testing Tools"
+                      }
+                   ]
+                },
+                {
+                   "label":"Buffer Overflows"
+                },
+                {
+                   "label":"Command Injection"
+                },
+                {
+                   "label":"Cross Site Request Forgery"
+                },
+                {
+                   "label":"Cross Site Scripting"
+                },
+                {
+                   "label":"Input Sanitization vs Output Encoding"
+                },
+                {
+                   "label":"Local File Inclusion"
+                },
+                {
+                   "label":"Remote File Inclusion"
+                },
+                {
+                   "label":"SQL Injection",
+                   "children":[
+                      {
+                         "label":"Blind SQLi"
+                      },
+                      {
+                         "label":"Tools"
+                      }
+                   ]
+                },
+                {
+                   "label":"Shell code",
+                   "children":[
+                      {
+                         "label":"registers"
+                      },
+                      {
+                         "label":"stack structure"
+                      },
+                      {
+                         "label":"x64 vs x86"
+                      }
+                   ]
+                },
+                {
+                   "label":"user uploaded content processing"
+                }
+             ]
+          },
+          {
+             "label":"Cryptography",
+             "children":[
+                {
+                   "label":"Asymmetric Cryptography"
+                },
+                {
+                   "label":"Cryptographic Attacks"
+                },
+                {
+                   "label":"Distance Based Hashing"
+                },
+                {
+                   "label":"File Formats"
+                },
+                {
+                   "label":"Forward Secrecy"
+                },
+                {
+                   "label":"Hashing"
+                },
+                {
+                   "label":"Key Derivation"
+                },
+                {
+                   "label":"Key Exchange"
+                },
+                {
+                   "label":"PKI And CAs"
+                },
+                {
+                   "label":"RNGs and PRNGs"
+                },
+                {
+                   "label":"Steganography"
+                },
+                {
+                   "label":"Symmetric Cryptography"
+                }
+             ]
+          },
+          {
+             "label":"Enterprise Security",
+             "children":[
+                {
+                   "label":"AuthN And AuthZ",
+                   "children":[
+                      {
+                         "label":"Cookie vs Session"
+                      },
+                      {
+                         "label":"Federation"
+                      },
+                      {
+                         "label":"MFA",
+                         "children":[
+                            {
+                               "label":"Biometric"
+                            },
+                            {
+                               "label":"SMS"
+                            },
+                            {
+                               "label":"TOTP"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"PAM"
+                      },
+                      {
+                         "label":"PKI Integration"
+                      },
+                      {
+                         "label":"SSO",
+                         "children":[
+                            {
+                               "label":"OAUTH2"
+                            },
+                            {
+                               "label":"SAML"
+                            }
+                         ]
+                      }
+                   ]
+                },
+                {
+                   "label":"Directory Services",
+                   "children":[
+                      {
+                         "label":"Account Types",
+                         "children":[
+                            {
+                               "label":"Domain Administrator"
+                            },
+                            {
+                               "label":"Domain User"
+                            },
+                            {
+                               "label":"Local Administrator"
+                            },
+                            {
+                               "label":"Local User"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Structure",
+                         "children":[
+                            {
+                               "label":"Common Name"
+                            },
+                            {
+                               "label":"Distinguished Name"
+                            },
+                            {
+                               "label":"Domain"
+                            },
+                            {
+                               "label":"Forest"
+                            },
+                            {
+                               "label":"OU"
+                            },
+                            {
+                               "label":"Object"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Trust Types",
+                         "children":[
+                            {
+                               "label":"Non-Transitive"
+                            },
+                            {
+                               "label":"One Way"
+                            },
+                            {
+                               "label":"Transitive"
+                            },
+                            {
+                               "label":"Two Way"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Trusts",
+                         "children":[
+                            {
+                               "label":"External"
+                            },
+                            {
+                               "label":"Forest"
+                            },
+                            {
+                               "label":"Parent-Child"
+                            },
+                            {
+                               "label":"Realm"
+                            },
+                            {
+                               "label":"Shortcut"
+                            },
+                            {
+                               "label":"Tree-Root"
+                            }
+                         ]
+                      }
+                   ]
+                },
+                {
+                   "label":"Remote Access",
+                   "children":[
+                      {
+                         "label":"Bastion"
+                      },
+                      {
+                         "label":"Mutual TLS Authentication"
+                      },
+                      {
+                         "label":"VPNs",
+                         "children":[
+                            {
+                               "label":"IPSec"
+                            },
+                            {
+                               "label":"Layer 2 Tunnel Protocol"
+                            },
+                            {
+                               "label":"PPTP"
+                            },
+                            {
+                               "label":"Split Horizon DNS"
+                            },
+                            {
+                               "label":"Split Tunnel vs Full Tunnel"
+                            }
+                         ]
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Networking",
+             "children":[
+                {
+                   "label":"Analysis",
+                   "children":[
+                      {
+                         "label":"Flow Analysis"
+                      },
+                      {
+                         "label":"IDS"
+                      },
+                      {
+                         "label":"IPS"
+                      }
+                   ]
+                },
+                {
+                   "label":"DDoS",
+                   "children":[
+                      {
+                         "label":"Amplification Attacks"
+                      },
+                      {
+                         "label":"Mitigations"
+                      },
+                      {
+                         "label":"Network Saturation"
+                      },
+                      {
+                         "label":"Standard Flood"
+                      }
+                   ]
+                },
+                {
+                   "label":"Email Security",
+                   "children":[
+                      {
+                         "label":"Blocking"
+                      },
+                      {
+                         "label":"Purging"
+                      },
+                      {
+                         "label":"Spoofing",
+                         "children":[
+                            {
+                               "label":"DKIM"
+                            },
+                            {
+                               "label":"DMARC"
+                            },
+                            {
+                               "label":"SPF"
+                            }
+                         ]
+                      }
+                   ]
+                },
+                {
+                   "label":"Firewalls",
+                   "children":[
+                      {
+                         "label":"DLP"
+                      },
+                      {
+                         "label":"DPI"
+                      },
+                      {
+                         "label":"Stateful vs Stateless"
+                      }
+                   ]
+                },
+                {
+                   "label":"Important Protocols",
+                   "children":[
+                      {
+                         "label":"802_11"
+                      },
+                      {
+                         "label":"802_1X"
+                      },
+                      {
+                         "label":"AFP"
+                      },
+                      {
+                         "label":"ARP"
+                      },
+                      {
+                         "label":"BGP"
+                      },
+                      {
+                         "label":"CSMA CA"
+                      },
+                      {
+                         "label":"CSMA CD"
+                      },
+                      {
+                         "label":"DHCP"
+                      },
+                      {
+                         "label":"DNS"
+                      },
+                      {
+                         "label":"Ethernet II And 802_3"
+                      },
+                      {
+                         "label":"FTP"
+                      },
+                      {
+                         "label":"HTTP"
+                      },
+                      {
+                         "label":"HTTP2"
+                      },
+                      {
+                         "label":"HTTPS"
+                      },
+                      {
+                         "label":"ICMP"
+                      },
+                      {
+                         "label":"IMAP"
+                      },
+                      {
+                         "label":"IP"
+                      },
+                      {
+                         "label":"IPSec"
+                      },
+                      {
+                         "label":"Kerberos"
+                      },
+                      {
+                         "label":"NFS"
+                      },
+                      {
+                         "label":"OSPF"
+                      },
+                      {
+                         "label":"POP3"
+                      },
+                      {
+                         "label":"RDP"
+                      },
+                      {
+                         "label":"RIP"
+                      },
+                      {
+                         "label":"RTMP"
+                      },
+                      {
+                         "label":"SMB"
+                      },
+                      {
+                         "label":"SMTP"
+                      },
+                      {
+                         "label":"SNMP"
+                      },
+                      {
+                         "label":"SOCKS"
+                      },
+                      {
+                         "label":"SSH"
+                      },
+                      {
+                         "label":"SSL And TLS"
+                      },
+                      {
+                         "label":"STP"
+                      },
+                      {
+                         "label":"TCP"
+                      },
+                      {
+                         "label":"UDP"
+                      },
+                      {
+                         "label":"mDNS"
+                      }
+                   ]
+                },
+                {
+                   "label":"OSI Model"
+                },
+                {
+                   "label":"Stateful vs Stateless"
+                }
+             ]
+          },
+          {
+             "label":"Operating Systems",
+             "children":[
+                {
+                   "label":"Computer Architecture",
+                   "children":[
+                      {
+                         "label":"BIOS"
+                      },
+                      {
+                         "label":"Boot Loader"
+                      },
+                      {
+                         "label":"NVRAM"
+                      }
+                   ]
+                },
+                {
+                   "label":"Hardware",
+                   "children":[
+                      {
+                         "label":"CPU"
+                      },
+                      {
+                         "label":"NIC"
+                      },
+                      {
+                         "label":"PCI"
+                      },
+                      {
+                         "label":"RAM"
+                      },
+                      {
+                         "label":"Storage"
+                      },
+                      {
+                         "label":"USB"
+                      }
+                   ]
+                },
+                {
+                   "label":"Init Systems",
+                   "children":[
+                      {
+                         "label":"Windows"
+                      },
+                      {
+                         "label":"launchd"
+                      },
+                      {
+                         "label":"systemd"
+                      },
+                      {
+                         "label":"sysvinit"
+                      },
+                      {
+                         "label":"upstart"
+                      }
+                   ]
+                },
+                {
+                   "label":"Kernel",
+                   "children":[
+                      {
+                         "label":"Drivers"
+                      },
+                      {
+                         "label":"Memory Protection"
+                      },
+                      {
+                         "label":"Network IO"
+                      },
+                      {
+                         "label":"Syscalls"
+                      }
+                   ]
+                },
+                {
+                   "label":"Permissions"
+                },
+                {
+                   "label":"Run Levels"
+                },
+                {
+                   "label":"Security Features",
+                   "children":[
+                      {
+                         "label":"Code Signing"
+                      },
+                      {
+                         "label":"Trusted Boot"
+                      },
+                      {
+                         "label":"Windows Security Policy"
+                      },
+                      {
+                         "label":"chroot"
+                      },
+                      {
+                         "label":"jails"
+                      },
+                      {
+                         "label":"mandatory access controls"
+                      },
+                      {
+                         "label":"selinux and apparmor"
+                      },
+                      {
+                         "label":"sudo"
+                      }
+                   ]
+                },
+                {
+                   "label":"Strengths And Weaknesses",
+                   "children":[
+                      {
+                         "label":"Linux"
+                      },
+                      {
+                         "label":"Windows"
+                      },
+                      {
+                         "label":"macOS"
+                      }
+                   ]
+                },
+                {
+                   "label":"Virtualization",
+                   "children":[
+                      {
+                         "label":"Containers",
+                         "children":[
+                            {
+                               "label":"CGroups"
+                            },
+                            {
+                               "label":"Docker"
+                            },
+                            {
+                               "label":"Kubernetes"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Full",
+                         "children":[
+                            {
+                               "label":"HyperV"
+                            },
+                            {
+                               "label":"VMWare"
+                            },
+                            {
+                               "label":"VirtualBox"
+                            }
+                         ]
+                      }
+                   ]
+                }
+             ]
+          }
+       ]
+    },
+    {
+       "label":"Software Engineering",
+       "children":[
+          {
+             "label":"Common Languages",
+             "children":[
+                {
+                   "label":"BASH"
+                },
+                {
+                   "label":"C And C Plus Plus"
+                },
+                {
+                   "label":"Go"
+                },
+                {
+                   "label":"Java"
+                },
+                {
+                   "label":"Javascript"
+                },
+                {
+                   "label":"NodeJS"
+                },
+                {
+                   "label":"Powershell"
+                },
+                {
+                   "label":"Python"
+                },
+                {
+                   "label":"Ruby"
+                },
+                {
+                   "label":"SQL"
+                }
+             ]
+          },
+          {
+             "label":"Compilers",
+             "children":[
+                {
+                   "label":"Backend"
+                },
+                {
+                   "label":"Frontend"
+                },
+                {
+                   "label":"Intermediate Representation",
+                   "children":[
+                      {
+                         "label":"Bytecode"
+                      },
+                      {
+                         "label":"Runtimes And VM"
+                      }
+                   ]
+                },
+                {
+                   "label":"Optimization",
+                   "children":[
+                      {
+                         "label":"Inlining"
+                      },
+                      {
+                         "label":"Memory"
+                      }
+                   ]
+                },
+                {
+                   "label":"Type Safety"
+                }
+             ]
+          },
+          {
+             "label":"Concurrency",
+             "children":[
+                {
+                   "label":"Fiber"
+                },
+                {
+                   "label":"Process"
+                },
+                {
+                   "label":"Semaphores"
+                },
+                {
+                   "label":"Thread"
+                }
+             ]
+          },
+          {
+             "label":"Data Types",
+             "children":[
+                {
+                   "label":"Arrays"
+                },
+                {
+                   "label":"Encoding",
+                   "children":[
+                      {
+                         "label":"ASCII"
+                      },
+                      {
+                         "label":"Base32"
+                      },
+                      {
+                         "label":"Base64"
+                      },
+                      {
+                         "label":"CSV"
+                      },
+                      {
+                         "label":"JSON"
+                      },
+                      {
+                         "label":"UTF-8"
+                      }
+                   ]
+                },
+                {
+                   "label":"Int Size"
+                },
+                {
+                   "label":"Maps"
+                },
+                {
+                   "label":"Primatives"
+                },
+                {
+                   "label":"Signed vs Unsigned"
+                },
+                {
+                   "label":"Strings"
+                },
+                {
+                   "label":"Trees"
+                }
+             ]
+          },
+          {
+             "label":"Distributed",
+             "children":[
+                {
+                   "label":"Shared Queues",
+                   "children":[
+                      {
+                         "label":"At Least Once vs At Most Once"
+                      },
+                      {
+                         "label":"Performance And Scaling"
+                      }
+                   ]
+                },
+                {
+                   "label":"Shared State",
+                   "children":[
+                      {
+                         "label":"Consistency"
+                      },
+                      {
+                         "label":"Distributed Storage Engines"
+                      },
+                      {
+                         "label":"Locks"
+                      },
+                      {
+                         "label":"Race Conditions"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Interpreters",
+             "children":[
+                {
+                   "label":"Types",
+                   "children":[
+                      {
+                         "label":"Abstract Syntax Tree"
+                      },
+                      {
+                         "label":"Bytecode"
+                      },
+                      {
+                         "label":"JIT"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Modeling",
+             "children":[
+                {
+                   "label":"Inheritance"
+                },
+                {
+                   "label":"Interfaces"
+                },
+                {
+                   "label":"Object Orientation"
+                },
+                {
+                   "label":"Polymorphism"
+                },
+                {
+                   "label":"Recursion"
+                },
+                {
+                   "label":"Reflection"
+                },
+                {
+                   "label":"Serialization"
+                }
+             ]
+          },
+          {
+             "label":"Pointers",
+             "children":[
+                {
+                   "label":"Function Pointers"
+                },
+                {
+                   "label":"Garbage Collection Implications"
+                },
+                {
+                   "label":"Pass By Value vs Pass By Reference"
+                }
+             ]
+          },
+          {
+             "label":"Processing",
+             "children":[
+                {
+                   "label":"Buffered IO"
+                },
+                {
+                   "label":"Regular Expressions"
+                },
+                {
+                   "label":"Sync vs Async"
+                }
+             ]
+          },
+          {
+             "label":"Testing",
+             "children":[
+                {
+                   "label":"BigO Complexity"
+                },
+                {
+                   "label":"Integration Tests"
+                },
+                {
+                   "label":"Negative Test Cases"
+                },
+                {
+                   "label":"Unit Tests"
+                }
+             ]
+          }
+       ]
+    },
+    {
+       "label":"Systems Engineering",
+       "children":[
+          {
+             "label":"Cloud",
+             "children":[
+                {
+                   "label":"Apps",
+                   "children":[
+                      {
+                         "label":"GSuite",
+                         "children":[
+                            {
+                               "label":"GMail"
+                            },
+                            {
+                               "label":"Google Drive"
+                            },
+                            {
+                               "label":"Google Sheets"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Storage",
+                         "children":[
+                            {
+                               "label":"Box"
+                            },
+                            {
+                               "label":"Dropbox"
+                            }
+                         ]
+                      }
+                   ]
+                },
+                {
+                   "label":"Infrastructure",
+                   "children":[
+                      {
+                         "label":"Providers",
+                         "children":[
+                            {
+                               "label":"AWS"
+                            },
+                            {
+                               "label":"Azure"
+                            },
+                            {
+                               "label":"GCP"
+                            }
+                         ]
+                      },
+                      {
+                         "label":"Technologies",
+                         "children":[
+                            {
+                               "label":"Compute Resources"
+                            },
+                            {
+                               "label":"Elastic IPs"
+                            },
+                            {
+                               "label":"Host-based ACLs"
+                            },
+                            {
+                               "label":"IAM"
+                            },
+                            {
+                               "label":"Lambda Functions"
+                            },
+                            {
+                               "label":"Load Balancers"
+                            },
+                            {
+                               "label":"Network ACLs"
+                            },
+                            {
+                               "label":"Object Storage"
+                            },
+                            {
+                               "label":"Virtual Private Clouds"
+                            }
+                         ]
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Configuration Management",
+             "children":[
+                {
+                   "label":"State Management",
+                   "children":[
+                      {
+                         "label":"Ansible"
+                      },
+                      {
+                         "label":"Chef"
+                      },
+                      {
+                         "label":"Puppet"
+                      },
+                      {
+                         "label":"SCCM"
+                      },
+                      {
+                         "label":"Salt"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Databases",
+             "children":[
+                {
+                   "label":"ACID",
+                   "children":[
+                      {
+                         "label":"Atomicity"
+                      },
+                      {
+                         "label":"Consistency"
+                      },
+                      {
+                         "label":"Durability"
+                      },
+                      {
+                         "label":"Isolation"
+                      }
+                   ]
+                },
+                {
+                   "label":"High Availability",
+                   "children":[
+                      {
+                         "label":"Master-Slave"
+                      },
+                      {
+                         "label":"Multi Master"
+                      },
+                      {
+                         "label":"Multi-Slave Single Master"
+                      }
+                   ]
+                },
+                {
+                   "label":"NoSQL",
+                   "children":[
+                      {
+                         "label":"Cassandra"
+                      },
+                      {
+                         "label":"MongoDB"
+                      },
+                      {
+                         "label":"Redis"
+                      }
+                   ]
+                },
+                {
+                   "label":"RDBS",
+                   "children":[
+                      {
+                         "label":"Authentication"
+                      },
+                      {
+                         "label":"Data Security"
+                      },
+                      {
+                         "label":"MSSQL"
+                      },
+                      {
+                         "label":"MySQL"
+                      },
+                      {
+                         "label":"Normalization"
+                      },
+                      {
+                         "label":"PostgreSQL"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Endpoint Management",
+             "children":[
+                {
+                   "label":"Mac",
+                   "children":[
+                      {
+                         "label":"Apple MDM"
+                      },
+                      {
+                         "label":"JAMF"
+                      }
+                   ]
+                },
+                {
+                   "label":"Mobile",
+                   "children":[
+                      {
+                         "label":"MDM"
+                      },
+                      {
+                         "label":"Provisioning"
+                      }
+                   ]
+                },
+                {
+                   "label":"Windows",
+                   "children":[
+                      {
+                         "label":"GPO"
+                      },
+                      {
+                         "label":"SCCM"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "label":"Infrastructure Automation",
+             "children":[
+                {
+                   "label":"Ansible"
+                },
+                {
+                   "label":"Terraform"
+                }
+             ]
+          },
+          {
+             "label":"Revision Control",
+             "children":[
+                {
+                   "label":"Code Review"
+                },
+                {
+                   "label":"Continuous Integration"
+                },
+                {
+                   "label":"Git",
+                   "children":[
+                      {
+                         "label":"Add"
+                      },
+                      {
+                         "label":"Commit"
+                      },
+                      {
+                         "label":"Diff"
+                      },
+                      {
+                         "label":"Pull"
+                      },
+                      {
+                         "label":"Push"
+                      }
+                   ]
+                }
+             ]
+          }
+       ]
+    }
+ ]

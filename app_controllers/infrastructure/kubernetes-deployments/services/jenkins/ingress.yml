@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-charles
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/preserve-host: "true"
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.priority: "1"
+spec:
+  rules:
+  - host: jenkins-charles.us-west1-a.securethebox.us
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-charles
+          servicePort: http

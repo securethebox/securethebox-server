@@ -1,0 +1,31 @@
+
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: nginx-modsecurity-charles
+  labels:
+    app: nginx-modsecurity-charles
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-modsecurity-charles
+  template:
+    metadata:
+      labels:
+        app: nginx-modsecurity-charles
+    spec:
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
+      containers:
+      - name: nginx-modsecurity-charles
+        image: "really/nginx-modsecurity:latest"
+        ports:
+        - containerPort: 80
+        - containerPort: 9000
+        volumeMounts:
+          - mountPath: "/var/log/challenge1"
+            name: task-pv-storage
+              

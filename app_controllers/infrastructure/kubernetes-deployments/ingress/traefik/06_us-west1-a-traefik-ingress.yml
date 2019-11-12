@@ -1,0 +1,19 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-us-west1-a-ingress-controller
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    external-dns.alpha.kubernetes.io/target: traefik.us-west1-a.securethebox.us
+spec:
+  rules:
+    - host: traefik.us-west1-a.securethebox.us
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: traefik-us-west1-a-ingress-controller
+            servicePort: admin
+              

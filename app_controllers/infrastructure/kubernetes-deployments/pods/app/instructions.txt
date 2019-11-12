@@ -1,0 +1,11 @@
+git clone http://gitlab-charles/root/juice-shop-charles.git
+cd juice-shop-charles
+npm install
+npm run postinstall
+npm run start
+
+
+
+
+kill app
+git pull
