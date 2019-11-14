@@ -1,6 +1,5 @@
 import sys
 
-
 def writeConfig(**kwargs):
     template = """
 apiVersion: rbac.authorization.k8s.io/v1
