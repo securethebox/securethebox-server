@@ -4,25 +4,6 @@ import sys
 # kubectl -n kube-system create secret tls traefik-ui-tls-cert --key=tls.key --cert=tls.crt
 
 def writeConfig(**kwargs):
-    templateo = """
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: traefik-ingress-controller
-  namespace: default
-  annotations:
-    kubernetes.io/ingress.class: traefik
-    external-dns.alpha.kubernetes.io/target: traefik.us-west1-a.securethebox.us
-spec:
-  rules:
-    - host: traefik.us-west1-a.securethebox.us
-      http:
-        paths:
-        - path: /
-          backend:
-            serviceName: traefik-ingress-controller
-            servicePort: 8080
-              """
     template = """
 apiVersion: extensions/v1beta1
 kind: Ingress
