@@ -1,6 +1,5 @@
 import sys
 
-
 def writeConfig(**kwargs):
     template = """
 kind: Deployment
