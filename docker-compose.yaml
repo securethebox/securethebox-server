@@ -26,6 +26,12 @@ services:
         depends_on:
             - postgres
             - redis
+        build:
+          context: https://github.com/puckel/docker-airflow.git
+          dockerfile: Dockerfile
+          args:
+              # - AIRFLOW_DEPS=
+              - PYTHON_DEPS=elasticsearch elasticsearch-dsl
         environment:
             - LOAD_EX=y
             - FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
@@ -48,6 +54,12 @@ services:
         restart: always
         depends_on:
             - redis
+        build:
+          context: https://github.com/puckel/docker-airflow.git
+          dockerfile: Dockerfile
+          args:
+              # - AIRFLOW_DEPS=
+              - PYTHON_DEPS=elasticsearch elasticsearch-dsl
         environment:
             - EXECUTOR=Celery
         ports:
@@ -58,6 +70,12 @@ services:
         restart: always
         depends_on:
             - webserver
+        build:
+          context: https://github.com/puckel/docker-airflow.git
+          dockerfile: Dockerfile
+          args:
+              # - AIRFLOW_DEPS=
+              - PYTHON_DEPS=elasticsearch elasticsearch-dsl
         volumes:
             - ./airflow/dags:/usr/local/airflow/dags
         environment:
@@ -74,6 +92,12 @@ services:
         restart: always
         depends_on:
             - scheduler
+        build:
+          context: https://github.com/puckel/docker-airflow.git
+          dockerfile: Dockerfile
+          args:
+              # - AIRFLOW_DEPS=
+              - PYTHON_DEPS=elasticsearch elasticsearch-dsl
         volumes:
             - ./airflow/dags:/usr/local/airflow/dags
         environment:

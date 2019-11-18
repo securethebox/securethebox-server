@@ -1,11 +1,13 @@
 import time
 from builtins import range
 from pprint import pprint
-
+from controllers.elasticsearch_controller import ElasticSearch
 import airflow
 from airflow.models import DAG
 # from airflow.models import Variables
+from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python_operator import BranchPythonOperator
 
 args = {
     'owner': 'airflow',
@@ -18,48 +20,84 @@ dag = DAG(
     schedule_interval=None,
 )
 
+existingIpAddressesList = ['30.156.16.163', '164.85.94.243', '50.184.59.162', '236.212.255.77', '16.241.165.21', '246.106.125.113']
 
-# [START howto_operator_python]
-def print_context(ds, **kwargs):
-    pprint(kwargs)
-    print(ds)
-    return 'Whatever you return gets printed in the logs'
+def getAllIpAddresses():
+    es = ElasticSearch()
+    es.setIndex("kibana_sample_data_logs")
+    return list(es.queryIPAddresses())
+    
+def printIpAddress(ip):
+    print(ip)
 
+def addIpAddress(ip):
+    existingIpAddressesList.append(ip)
+
+def printAllExistingIps():
+    return len(existingIpAddressesList)
+
+def check_if_ip_exists_in_list(**kwargs):
+    if kwargs['ip'] in existingIpAddressesList:
+        return "print_ip"
+    else:
+        return "add_ip"
+
+allIP = getAllIpAddresses()
 
 # This is a task set as a variable
-run_this = PythonOperator(
-    task_id='print_the_context',
-    provide_context=True,
-    python_callable=print_context,
-    dag=dag,
+t1 = PythonOperator(
+    task_id='get_all_ip_addresses',
+    python_callable=getAllIpAddresses,
+    dag=dag
 )
-# [END howto_operator_python]
 
+t4 = PythonOperator(
+    task_id='join',
+    python_callable=printAllExistingIps,
+    trigger_rule='one_success',
+    dag=dag
+)
 
-# [START howto_operator_python_kwargs]
-def my_sleeping_function(random_base):
-    """This is a function that will run within the DAG execution"""
-    time.sleep(random_base)
-
-
-# Generate 5 sleeping tasks, sleeping from 0.0 to 0.4 seconds respectively
-for i in range(5):
-    task = PythonOperator(
-        task_id='sleep_for_' + str(i),
-        python_callable=my_sleeping_function,
-        op_kwargs={'random_base': float(i) / 10},
+b1 = BranchPythonOperator(
+        task_id='branching',
+        python_callable=lambda: getAllIpAddresses,
         dag=dag,
     )
 
-    # task depends on run_this to be completed before running
-    run_this >> task
+t1 >> b1 
 
-    # a << b = Depends on b to complete before running a
-    # a >> [b,c] = after a, run b and c in parallel
-    # 
+for x in allIP:
 
-# Getting Variables:
-# In Airflow Admin>Variables, variable_name_in_airflow = {"key1","value", "key2", "value"}
-# some_variable = Variable.get("variable_name_in_airflow", deserialize_json = True)
-# var1 = some_variable["key1"]
-# var2 = some_variable["key2"]
+    t = DummyOperator(
+        task_id=x,
+        dag=dag,
+    )
+
+    t2 = PythonOperator(
+        task_id='print_ip',
+        python_callable=printIpAddress,
+        op_kwargs={'ip': x},
+        dag=dag
+    )
+    
+    t3 = PythonOperator(
+        task_id='add_ip',
+        python_callable=addIpAddress,
+        op_kwargs={'ip': x},
+        dag=dag
+    )
+
+    c1 = BranchPythonOperator(
+        task_id='follow_' + x,
+        provide_context=True,
+        python_callable=check_if_ip_exists_in_list,
+        dag=dag,
+    )
+
+    b1 >> t >> [t2,t3] >> t4
+
+
+
+
+if __name__ == "__main__":
+    my_sleeping_function("test")
