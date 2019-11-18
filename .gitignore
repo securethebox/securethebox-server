@@ -5,6 +5,7 @@ config/prod.json
 .vscode/
 airflow/pgdata/
 airflow/airflow.db
+celerybeat-schedule.db
 
 # Logs
 logs

@@ -103,6 +103,10 @@ Google Kubernetes Engine
 ```
 securethebox_server
 │
+├── airflow/ (contains all airflow files)
+│   ├── airflow.cfg (airflow configuration file)
+│   └── dags/ (contains all airflow dag files)
+│
 ├── app_controllers/ (contain all business logic for main app)
 │   ├── accounts/
 │   ├── applications/
@@ -119,15 +123,17 @@ securethebox_server
 │   └── challenges.py
 │
 ├── app_services/ (contain all functions and scripts that interact with external services)
+│   ├── elasticsearch/
 │   ├── firebase/
 │   ├── firestore/
 │   ├── minio/
 │   ├── stripe/
 │   ├── sendgrid/
 │   ├── spinnaker/
-│   ├── googlekubernetesengine/
-│   ├── googlerecaptcha/
-│   └── heroku/
+│   ├── google_kubernetes_engine/
+│   ├── google_recaptcha/
+│   ├── heroku/
+│   └── zipkin/
 │
 ├── charts/ 
 │   └── securethebox-server/
@@ -157,6 +163,11 @@ securethebox_server
 ├── apiv2.py (API v2 - GRAPHQL)
 │
 ├── app.py (securethebox's main python script to start app)
+│
+├── celery_app.py (Used for testing celery_tasks)
+├── celery_beats.py (Used for scheduled tasks)
+├── celery_tasks.py (Celery main distributed task functions)
+├── celeryconfig.py (Celery configuration file)
 │
 ├── Dockerfile (docker file to build docker image)
 │
