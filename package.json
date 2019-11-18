@@ -14,6 +14,14 @@
     "docker-b": "python git_scripts.py docker-build",
     "docker-r": "python git_scripts.py docker-run",
     "docker-k": "python git_scripts.py docker-kill-all",
+    "rabbit": "docker run -d -p 5672:5672 rabbitmq",
+    "postgres": "docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=airflow -e POSTGRES_USER=airflow -e POSTGRES_DB=airflow postgres",
+    "celery-app": "./venv/bin/python3.7 celery_app.py",
+    "work-start": ". ./venv/bin/activate ; celery -A celery_tasks multi start worker --loglevel=info --pool=eventlet --autoscale=1,4 -O fair",
+    "work-stop": ". ./venv/bin/activate ; celery -A celery_tasks multi stop worker",
+    "beat-start": "rm -rf beat-worker*.log ; . ./venv/bin/activate ; celery -A celery_beats multi start beat-worker -B --loglevel=info --autoscale=1,4 -O fair",
+    "beat-stop": "rm -rf beat-worker*.log ; . ./venv/bin/activate ; celery -A celery_beats multi stop beat-worker",
+    "flower": ". ./venv/bin/activate ; flower -A celery_tasks --port=5555",
     "images-a": "python git_scripts.py docker-images-delete-all"
   },
   "repository": {
