@@ -16,6 +16,7 @@
     "docker-b": "python git_scripts.py docker-build",
     "docker-r": "python git_scripts.py docker-run",
     "docker-k": "python git_scripts.py docker-kill-all",
+    "elk": "docker run --rm -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk",
     "rabbit": "docker run -d -p 5672:5672 rabbitmq",
     "postgres": "docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=airflow -e POSTGRES_USER=airflow -e POSTGRES_DB=airflow postgres",
     "celery-app": "./venv/bin/python3.7 celery_app.py",
