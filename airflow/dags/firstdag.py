@@ -3,7 +3,8 @@ from builtins import range
 from pprint import pprint
 
 import airflow
-from airflow.models import DAG, Variable
+from airflow.models import DAG
+# from airflow.models import Variables
 from airflow.operators.python_operator import PythonOperator
 
 args = {

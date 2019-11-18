@@ -35,8 +35,6 @@ services:
             - POSTGRES_DB=airflow
         volumes:
             - ./airflow/dags:/usr/local/airflow/dags
-            # Uncomment to include custom plugins
-            # - ./plugins:/usr/local/airflow/plugins
         ports:
             - "8080:8080"
         command: webserver
@@ -45,7 +43,6 @@ services:
             interval: 30s
             timeout: 30s
             retries: 3
-
     flower:
         image: puckel/docker-airflow:1.10.4
         restart: always
@@ -56,7 +53,6 @@ services:
         ports:
             - "5555:5555"
         command: flower
-
     scheduler:
         image: puckel/docker-airflow:1.10.4
         restart: always

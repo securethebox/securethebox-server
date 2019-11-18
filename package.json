@@ -11,6 +11,8 @@
     "push-b": "python git_scripts.py git-push-branch",
     "sync-l": "python git_scripts.py git-sync-local",
     "sync-m": "python git_scripts.py git-merge-upstream",
+    "compose-up": "docker-compose up",
+    "compose-down": "docker-compose down --remove-orphans",
     "docker-b": "python git_scripts.py docker-build",
     "docker-r": "python git_scripts.py docker-run",
     "docker-k": "python git_scripts.py docker-kill-all",

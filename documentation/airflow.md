@@ -15,8 +15,6 @@ airflow webserver -p 9090
 - Start airflow scheduler
 airflow scheduler
 
-https://medium.com/@khatri_chetan/how-to-setup-airflow-multi-node-cluster-with-celery-rabbitmq-cfde7756bb6a
-
 https://github.com/puckel/docker-airflow
 
 ```
