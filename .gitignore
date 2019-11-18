@@ -3,7 +3,8 @@ venv/
 config/dev.json
 config/prod.json
 .vscode/
-
+airflow/pgdata/
+airflow/airflow.db
 
 # Logs
 logs
