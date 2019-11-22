@@ -1,10 +1,6 @@
-import time
-from builtins import range
-from pprint import pprint
 from controllers.elasticsearch_controller import ElasticSearch
 import airflow
 from airflow.models import DAG
-# from airflow.models import Variables
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.python_operator import BranchPythonOperator
