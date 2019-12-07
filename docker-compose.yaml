@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+    flask:
+      build: .
+      container_name: securethebox-server
+      environment:
+          - APPENV=PROD
+      ports:
+          - "5000:5000"
+      command: ./venv/bin/python3.7 app.py
