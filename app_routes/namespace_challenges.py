@@ -1,5 +1,6 @@
 from flask_restplus import Namespace, Resource, fields, reqparse
 from .initialize.academy import addCourse
+from app_controllers.firestore.firestore_academy import FirestoreAcademy
 
 api = Namespace('challenges', description='Challenge related operations')
 
@@ -22,6 +23,8 @@ resource_fields = api.model('Challenge', {
     'activeStep': fields.Integer(required=True, description='Starting step number'),
 })
 
+fa = FirestoreAcademy()
+
 @api.route('')
 class ChallengeCreate(Resource):
     @api.doc('create_challenge')
@@ -29,7 +32,8 @@ class ChallengeCreate(Resource):
     def post(self):
         args = apps_parser.parse_args()
         print(args['challenge'])
-        addCourse(args['challenge'])
+        fa.addCourse(args['challenge'])
+        # addCourse()
         try:
             return args['challenge'], 201 ,  {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "POST"} 
         except:

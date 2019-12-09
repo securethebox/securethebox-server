@@ -103,9 +103,6 @@ Google Kubernetes Engine
 ```
 securethebox_server
 │
-├── airflow/ (contains all airflow files)
-│   ├── airflow.cfg (airflow configuration file)
-│   └── dags/ (contains all airflow dag files)
 │
 ├── app_controllers/ (contain all business logic for main app)
 │   ├── accounts/
@@ -164,10 +161,6 @@ securethebox_server
 │
 ├── app.py (securethebox's main python script to start app)
 │
-├── celery_app.py (Used for testing celery_tasks)
-├── celery_beats.py (Used for scheduled tasks)
-├── celery_tasks.py (Celery main distributed task functions)
-├── celeryconfig.py (Celery configuration file)
 │
 ├── Dockerfile (docker file to build docker image)
 │
