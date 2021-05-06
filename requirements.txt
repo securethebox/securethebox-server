@@ -8,7 +8,7 @@ Click==7.0
 docker==4.1.0
 docutils==0.15.2
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 flask-restplus==0.13.0
 gitdb2==2.0.6
 gitlab==1.0.2
